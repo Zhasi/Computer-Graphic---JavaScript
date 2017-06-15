@@ -1,2 +1,2 @@
 # Computer-Graphic---JavaScript
-Project for my course Computer Graphic @ FMI
+Project and homework for my course Computer Graphic @ FMI
