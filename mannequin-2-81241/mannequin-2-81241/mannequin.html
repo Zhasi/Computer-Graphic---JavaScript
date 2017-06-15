@@ -1,0 +1,157 @@
+﻿<!DOCTYPE html>
+
+<html>
+	<head>
+		<script src="three.min.js"></script>
+		<script src="human.js"></script>
+	</head>
+	
+	<body>
+		<h1>"Клекове"<br><small>ф.н. 81241 &ndash; група 2 &ndash; Жасмина Атанасова</small></h1>
+		
+<audio id="music" autoplay loop>
+				<source src="black_eyed_peas-pump_it.mp3" type="audio/mpeg">
+		</audio>
+			
+		<script>
+			
+			document.getElementsByTagName('h1')[0].style = 'color:white; text-align:center; font-size:1.75em';
+			
+			
+			renderer = new THREE.WebGLRenderer({antialias:true});
+			renderer.setSize( window.innerWidth, window.innerHeight );
+			document.body.appendChild( renderer.domElement );
+			renderer.domElement.style = 'width:100%; height:100%; position:fixed; top:0; left:0; z-index:-1;';
+			
+			
+			scene = new THREE.Scene();
+			camera = new THREE.PerspectiveCamera( 30, window.innerWidth/window.innerHeight, 0.1, 2000 );
+			camera.position.set(0,0,100);
+
+			
+			var light = new THREE.DirectionalLight('white',1);
+			light.position.set(4,1,0);
+			scene.add(light);
+			var light = new THREE.DirectionalLight('white',1);
+			light.position.set(-4,1,0);
+			scene.add(light);
+			scene.add( new THREE.AmbientLight('white',0.5) );
+			
+			
+			var t = 0; 
+			function drawFrame()
+			{
+				requestAnimationFrame( drawFrame );
+				if (animate) animate(t++);
+				renderer.render( scene, camera );
+			}			
+			
+					
+			
+			colors[4] = 'lightskyblue';
+			адам = мъжествен(); 
+			ева = женствен(); 
+			ева.scale.set(0.9,0.9,0.9);
+
+			
+			адам.position.set(35,-18.5,-2);
+	        адам.rotation.set(0,rad(185),0);
+			
+			адам.л_крак.врът(5,0,0);
+				адам.л_коляно.врът(0,0,10);
+			    адам.д_крак.врът(-5,0,0);
+				адам.д_коляно.врът(0,0,10);
+			
+			адам.врат.врът(0*cos(1.4*t),45*sin(1.1*t),-25+20*cos(1.0*t));
+			
+			адам.л_ръка.врът(18,-135,50);
+				адам.л_лакът.врът(0,-70,60);
+				адам.л_китка.врът(0,100,50);
+			адам.д_ръка.врът(55,-130,50);
+				адам.д_лакът.врът(0,-70,60);
+				адам.д_китка.врът(0,-60,40);
+
+			
+			ева.position.set(21,-20.5,-2);
+			ева.rotation.set(0,rad(185),0);
+			
+			
+			ева.л_крак.врът(5,0,0);
+				ева.л_коляно.врът(0,0,10);
+			    ева.д_крак.врът(-5,0,0);
+				ева.д_коляно.врът(0,0,10);
+					
+			ева.врат.врът(0*cos(1.4*t),45*sin(1.1*t),-55+20*cos(1.0*t));
+			
+			ева.л_ръка.врът(90,130,-60);
+				ева.л_лакът.врът(0,-40,130);
+				ева.л_китка.врът(-70,80,50);
+			ева.д_ръка.врът(-90,-130,-60);
+				ева.д_лакът.врът(0,40,130);
+				ева.д_китка.врът(0,80,50);
+			
+	var geometry = new THREE.CylinderBufferGeometry( 1, 1, 50,64);
+    var material = new THREE.MeshBasicMaterial( {color: 'metal'} );
+    var cylinder = new THREE.Mesh( geometry, material );
+	  cylinder.rotation.x = 0.5*Math.PI;
+	  cylinder.position.set(20,-1,0);
+    scene.add( cylinder );
+  
+var geometry1 = new THREE.CylinderBufferGeometry( 1.5, 1.5, 2,64);
+    var material1 = new THREE.MeshBasicMaterial( {color: 'metal'} );
+    var cylinder1 = new THREE.Mesh( geometry1, material1 );
+	  cylinder1.rotation.x = 0.5*Math.PI;
+	  cylinder1.position.set(23.5,-2,0);
+    scene.add( cylinder1 );
+	
+	var geometry2 = new THREE.CylinderBufferGeometry( 1.5, 1.5, 2,64);
+    var material2 = new THREE.MeshBasicMaterial( {color: 'metal'} );
+    var cylinder2 = new THREE.Mesh( geometry2, material2 );
+	  cylinder2.rotation.x = 0.5*Math.PI;
+	  cylinder2.position.set(23.5,-2,0);
+    scene.add( cylinder2 );
+	
+			// анимация на човечетата
+
+			var county=0;
+			var countz
+
+			animate = function (t)
+			{
+				// въртене на сцената
+				scene.rotateY(0.003);
+				
+				// приближаване и отдалечаване
+				camera.position.set(0,-10,120+30*cos(t/10));
+
+				ева.л_крак.врът(0,0,25*sin(5*t)-65);
+				ева.д_крак.врът(0,0,25*sin(5*t)-65);
+				ева.position.set(20,5*sin(5*t)-30,-2);
+
+				адам.л_крак.врът(0,5*sin(5*t)-50,25*sin(5*t)-65);
+				адам.д_крак.врът(0,-5*sin(5*t)+50,25*sin(5*t)-65);
+				адам.position.set(30,5*sin(5*t)-30,-2)
+
+
+				адам.л_коляно.врът(0,0,25*sin(5*(t-30))+75);
+				адам.д_коляно.врът(0,0,25*sin(5*(t-30))+75);
+
+				адам.л_глезен.врът(0,0,1*sin(10*t)+15);
+				адам.д_глезен.врът(0,0,1*sin(10*t)+15);
+
+				ева.л_коляно.врът(0,0,25*sin(5*(t-30))+75);
+				ева.д_коляно.врът(0,0,25*sin(5*(t-30))+75);
+
+				ева.д_глезен.врът(0,0,1*sin(10*t)+15);
+				ева.л_глезен.врът(0,0,1*sin(10*t)+15);
+			
+
+				cylinder.position.set(23.5,5*sin(5*t)-8,-2);
+				cylinder1.position.set(23.5,5*sin(5*t)-8,-17);
+			cylinder2.position.set(23.5,5*sin(5*t)-8,13);
+			}
+			
+			drawFrame();
+		</script>
+	</body>
+</html>
